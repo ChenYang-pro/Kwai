@@ -10,7 +10,6 @@ function IndexRoute() {
       })}
     </Routes>
   );
-  console.log("routes", routes);
   return <div>{routes}</div>;
 }
 
