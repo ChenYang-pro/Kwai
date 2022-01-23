@@ -1,7 +1,11 @@
-import React from "react";
+import IndexRoute from "./route/index";
 
 function App() {
-  return <div> hello world!</div>;
+  return (
+    <div>
+      <IndexRoute />
+    </div>
+  );
 }
 
 export default App;
