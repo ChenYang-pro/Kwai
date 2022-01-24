@@ -1,5 +1,5 @@
 function Commodity() {
-  return <div>商品页11</div>;
+  return <div>商品详情</div>;
 }
 
 export default Commodity;

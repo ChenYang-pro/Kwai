@@ -1,5 +1,5 @@
 import Index from "../view/index/index";
-import Login from "../view/login/index";
+import LikeLiHood from "../view/likelihood/index";
 import Commodity from "../view/commodity/index";
 
 let routeList = [
@@ -9,8 +9,8 @@ let routeList = [
     element: <Index />,
   },
   {
-    path: "login",
-    element: <Login />,
+    path: "likelihood",
+    element: <LikeLiHood />,
   },
   {
     path: "commodity",
