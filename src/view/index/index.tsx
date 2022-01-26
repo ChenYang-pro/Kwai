@@ -1,7 +1,7 @@
 import React from 'react';
-import Intro from '../introduction';
-import Commodity from '../commodity';
-import LikeLiHood from '../likelihood';
+import Introduction from './introduction';
+import Commodity from './commodity';
+import LikeLiHood from './likelihood';
 import { IntroMessage } from '../common/type';
 
 function Index() {
@@ -18,9 +18,10 @@ function Index() {
     saleInfo: '测试商品勿拍不发货快手小块',
     addressInfo: '48小时内从北京市市辖区发货'
   };
+
   return (
-    <div className="w-full">
-      <Intro info={info} />
+    <div className="w-full flex flex-col justify-center items-center ">
+      <Introduction info={info} />
       <Commodity />
       <LikeLiHood />
     </div>

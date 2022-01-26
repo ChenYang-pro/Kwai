@@ -2,7 +2,7 @@ import IndexRoute from "./route/index";
 
 function App() {
   return (
-    <div>
+    <div className="bg-gray-100">
       <IndexRoute />
     </div>
   );
