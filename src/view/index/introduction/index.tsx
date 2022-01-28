@@ -1,6 +1,6 @@
-import { Avatar, Button } from 'antd';
+import { Button, Rate } from 'antd';
 import { IntroMessage } from '../../common/type';
-import { UserOutlined, RightOutlined } from '@ant-design/icons';
+import { RightOutlined } from '@ant-design/icons';
 
 type propsType = {
   info: IntroMessage;
@@ -67,7 +67,11 @@ function StoreInfo() {
     <div className="mt-2 bg-white p-4 box-border">
       <div className="flex items-center w-full box-border mb-3">
         <div className="mx-2 w-14 h-14">
-          <Avatar size={64} icon={<UserOutlined />} />
+          <img
+            className="rounded-full"
+            src="https://tx2.a.kwimgs.com/uhead/AB/2020/08/03/11/BMjAyMDA4MDMxMTQ2MzJfODMzMDkzOTVfMV9oZDQ0Xzg4Ng==_s.jpg"
+            alt=""
+          />
         </div>
         <div className="flex justify-between w-full">
           <div className="inline-block">
@@ -82,7 +86,10 @@ function StoreInfo() {
         </div>
       </div>
       <div className="box-border bg-gray-100 p-4">
-        <div>购物体验星级</div>
+        <div className="flex items-center">
+          <div>购物体验星级</div>
+          <Rate className="flex ml-2 " />
+        </div>
         <div className="flex justify-between text-xs text-gray-400 mt-1">
           <div className="flex justify-between">
             <div>商品质量</div>

@@ -20,7 +20,7 @@ function Index() {
   };
 
   return (
-    <div className="w-full flex flex-col justify-center items-center ">
+    <div className="flex flex-col justify-center items-center ">
       <Introduction info={info} />
       <Commodity />
       <LikeLiHood />
