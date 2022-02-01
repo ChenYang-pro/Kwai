@@ -1,4 +1,4 @@
-import IndexRoute from "./route/index";
+import IndexRoute from './route/index';
 
 function App() {
   return (
