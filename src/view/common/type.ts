@@ -8,7 +8,7 @@ interface IntroMessage {
 
 interface basicResponse<T> {
   code: String;
-  T(data: T): {};
+  data: T;
   desc: String;
 }
 

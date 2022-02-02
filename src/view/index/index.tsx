@@ -1,20 +1,26 @@
 import Introduction from './introduction';
 import Commodity from './commodity';
 import LikeLiHood from './likelihood';
-import { fetchGoods } from '../common/queries';
 import { useQuery } from 'react-query';
-import axios from 'axios';
-import { useEffect } from 'react';
+
+import { useState } from 'react';
+import { IntroMessage } from '../common/type';
+import { fetchGoods } from '../common/queries';
 
 function Index() {
-  const { data } = useQuery('goodsInfo', async () => {
-    const { data } = await axios.get(`https://www.fastmock.site/mock/fdcb6edab58f19b4cf94349d04602270/kwai/api/${123}`);
-    return data;
+  const [goodsData, setGoodsData] = useState<IntroMessage>();
+  const { isLoading } = useQuery('goodsInfo', async () => {
+    const data = await fetchGoods();
+    setGoodsData(data.data);
   });
 
+  if (isLoading) {
+    return <div>is loading!</div>;
+  }
+  
   return (
     <div className="flex flex-col justify-center items-center ">
-      <Introduction info={data} />
+      <Introduction info={goodsData} />
       <Commodity />
       <LikeLiHood />
     </div>

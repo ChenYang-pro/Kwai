@@ -3,12 +3,12 @@ import { IntroMessage } from '../../common/type';
 import { RightOutlined } from '@ant-design/icons';
 
 type propsType = {
-  info: IntroMessage;
+  info: IntroMessage | undefined;
 };
 
 function Introduction(props: propsType) {
   const { info } = props;
-  const pictures = info.pic
+  const pictures = info?.pic
     ? info.pic.map((picUrl: string, idx: number) => (
         <div key={idx}>
           <h3>
@@ -17,7 +17,7 @@ function Introduction(props: propsType) {
         </div>
       ))
     : 'testError';
-  console.log('11', info.price, pictures);
+  console.log('11', info?.price, pictures);
 
   return (
     <div className="w-full flex flex-col justify-center">
