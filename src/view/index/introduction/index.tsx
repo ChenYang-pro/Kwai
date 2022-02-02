@@ -8,21 +8,10 @@ type propsType = {
 
 function Introduction(props: propsType) {
   const { info } = props;
-  const pictures = info?.pic
-    ? info.pic.map((picUrl: string, idx: number) => (
-        <div key={idx}>
-          <h3>
-            <img src={picUrl} alt="" />
-          </h3>
-        </div>
-      ))
-    : 'testError';
-  console.log('11', info?.price, pictures);
-
   return (
     <div className="w-full flex flex-col justify-center">
       <div>
-        <img className="w-full" src="https://p2.eckwai.com/ufile/adsocial/1dc759e9-7c62-4ca8-9444-11891bdcbaa1.jpg" alt=""></img>
+        <img className="w-full" src={info?.pic[0]} alt=""></img>
       </div>
       <InfoTag />
       <StoreInfo />
