@@ -1,8 +1,8 @@
 import Introduction from './introduction';
 import Commodity from './commodity';
 import LikeLiHood from './likelihood';
+import Footer from './footer';
 import { useQuery } from 'react-query';
-
 import { useState } from 'react';
 import { IntroMessage } from '../common/type';
 import { fetchGoods } from '../common/queries';
@@ -17,12 +17,13 @@ function Index() {
   if (isLoading) {
     return <div>is loading!</div>;
   }
-  
+
   return (
     <div className="flex flex-col justify-center items-center ">
       <Introduction info={goodsData} />
       <Commodity />
       <LikeLiHood />
+      <Footer />
     </div>
   );
 }
