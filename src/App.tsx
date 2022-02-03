@@ -1,4 +1,5 @@
 import IndexRoute from './route/index';
+import 'antd/dist/antd.css'
 
 function App() {
   return (

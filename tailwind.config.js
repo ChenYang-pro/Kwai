@@ -10,6 +10,14 @@ module.exports = {
       '50': '50%',
       '16': '30%',
     },
+    backgroundColor: {
+      'myPink': '#fe3666',
+      'white': '#fff'
+    },
+    textColor: {
+      'myPink': '#fe3666',
+      'white': '#fff'
+    },
     extend: {
       backgroundImage: {
         'likelihood': "url('https://ali-ec.static.yximgs.com/udata/pkg/eshop/kwaishop-shop-hybrid/i/a5a09fcf1c8e447dfbc8e5cf83a8649a.png')",

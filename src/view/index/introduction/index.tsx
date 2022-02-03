@@ -9,9 +9,9 @@ type propsType = {
 function Introduction(props: propsType) {
   const { info } = props;
   return (
-    <div className="w-full flex flex-col justify-center">
-      <div>
-        <img className="w-full" src={info?.pic[0]} alt=""></img>
+    <div className=" flex flex-col justify-center w-full">
+      <div className=''>
+        <img className="h-full w-full" src={info?.pic[0]} alt=""></img>
       </div>
       <InfoTag />
       <StoreInfo />
@@ -22,14 +22,14 @@ function Introduction(props: propsType) {
 function InfoTag() {
   return (
     <div className="w-full box-border p-4 bg-white">
-      <div className="flex items-center text-orange-700  font-semibold">
+      <div className="flex items-center text-myPink  font-semibold">
         <div className="text-xl">
           <span>￥</span>
           <span>228</span>
         </div>
-        <div className="px-2 ml-1 rounded-2xl bg-red-500 text-white text-sm flex items-center">
-          <span>预估到手价</span>
-          <div className="text-xl">
+        <div className="px-2 ml-1 rounded-2xl bg-myPink text-white text-sm flex items-center">
+          <span className='text-xs'>预估到手价</span>
+          <div className="text-xl font-bold">
             <span>￥</span>
             <span>226</span>
           </div>
@@ -68,8 +68,8 @@ function StoreInfo() {
             <p className="mt-2 text-xs">总销量 83件</p>
           </div>
           <div className="flex justify-center">
-            <Button type="primary" shape="round" danger>
-              <span className="text-red-500 text-xs ">进店逛逛</span>
+            <Button type="primary" shape="round" style={{ border: '1px solid #fe3666' }}>
+              <span className="text-myPink text-xs">进店逛逛</span>
             </Button>
           </div>
         </div>
