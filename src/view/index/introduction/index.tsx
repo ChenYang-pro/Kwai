@@ -1,101 +1,41 @@
-import { Button, Rate } from 'antd';
 import { IntroMessage } from '../../common/type';
 import { RightOutlined } from '@ant-design/icons';
-
 type propsType = {
-  info: IntroMessage | undefined;
+  goodsInfo: IntroMessage | undefined;
 };
 
 function Introduction(props: propsType) {
-  const { info } = props;
+  const { goodsInfo } = props;
   return (
     <div className=" flex flex-col justify-center w-full">
-      <div className=''>
-        <img className="h-full w-full" src={info?.pic[0]} alt=""></img>
+      <div className="">
+        <img className="h-full w-full" src={goodsInfo?.pic[0]} alt=""></img>
       </div>
-      <InfoTag />
-      <StoreInfo />
-    </div>
-  );
-}
-
-function InfoTag() {
-  return (
-    <div className="w-full box-border p-4 bg-white">
-      <div className="flex items-center text-myPink  font-semibold">
-        <div className="text-xl">
-          <span>￥</span>
-          <span>228</span>
-        </div>
-        <div className="px-2 ml-1 rounded-2xl bg-myPink text-white text-sm flex items-center">
-          <span className='text-xs'>预估到手价</span>
-          <div className="text-xl font-bold">
+      <div className="w-full box-border p-4 bg-white">
+        <div className="flex items-center text-myPink  font-semibold">
+          <div className="text-xl">
             <span>￥</span>
-            <span>226</span>
+            <span>{goodsInfo?.price.current}</span>
           </div>
-          <RightOutlined />
-        </div>
-      </div>
-      <div className="mt-2 mb-1 inline-block font-bold">
-        <span>测试商品勿拍不发货快手小块</span>
-      </div>
-      <div className="mt-2 text-sm text-gray-500">
-        <span>支持7天无理由退货</span>
-        <span className="ml-1">·</span>
-        <span className="ml-1">极速退款</span>
-      </div>
-      <div className="mt-2 text-sm text-gray-500">
-        <span>48小时内从北京市市辖区发货</span>
-      </div>
-    </div>
-  );
-}
-
-function StoreInfo() {
-  return (
-    <div className="mt-2 bg-white p-4 box-border">
-      <div className="flex items-center w-full box-border mb-3">
-        <div className="mx-2 w-14 h-14">
-          <img
-            className="rounded-full"
-            src="https://tx2.a.kwimgs.com/uhead/AB/2020/08/03/11/BMjAyMDA4MDMxMTQ2MzJfODMzMDkzOTVfMV9oZDQ0Xzg4Ng==_s.jpg"
-            alt=""
-          />
-        </div>
-        <div className="flex justify-between w-full">
-          <div className="inline-block">
-            <p>sir东东东的小店</p>
-            <p className="mt-2 text-xs">总销量 83件</p>
-          </div>
-          <div className="flex justify-center">
-            <Button type="primary" shape="round" style={{ border: '1px solid #fe3666' }}>
-              <span className="text-myPink text-xs">进店逛逛</span>
-            </Button>
+          <div className="px-2 ml-1 rounded-2xl bg-myPink text-white text-sm flex items-center">
+            <span className="text-xs">预估到手价</span>
+            <div className="text-xl font-bold">
+              <span>￥</span>
+              <span>{goodsInfo?.price.actual}</span>
+            </div>
+            <RightOutlined />
           </div>
         </div>
-      </div>
-      <div className="box-border bg-gray-100 p-4">
-        <div className="flex items-center">
-          <div>购物体验星级</div>
-          <Rate className="flex ml-2 " />
+        <div className="mt-2 mb-1 inline-block font-bold">
+          <span>{goodsInfo?.saleInfo}</span>
         </div>
-        <div className="flex justify-between text-xs text-gray-400 mt-1">
-          <div className="flex justify-between">
-            <div>商品质量</div>
-            <div className="ml-1">4.5</div>
-          </div>
-          <div className="flex justify-between">
-            <div>客服服务</div>
-            <div className="ml-1">4.5</div>
-          </div>
-          <div className="flex justify-between">
-            <div>物流速度</div>
-            <div className="ml-1">4.5</div>
-          </div>
-          <div className="flex justify-between">
-            <div>售后体验</div>
-            <div className="ml-1">4.5</div>
-          </div>
+        <div className="mt-2 text-sm text-gray-500">
+          <span>支持7天无理由退货</span>
+          <span className="ml-1">·</span>
+          <span className="ml-1">极速退款</span>
+        </div>
+        <div className="mt-2 text-sm text-gray-500">
+          <span>{goodsInfo?.addressInfo}</span>
         </div>
       </div>
     </div>

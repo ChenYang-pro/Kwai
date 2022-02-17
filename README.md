@@ -21,3 +21,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ⭐ `yarn test`
 ### Build Project: 
 ⭐ `yarn run build`
+
+### 🌔 mock接口
+[推荐信息](https://www.fastmock.site/mock/fdcb6edab58f19b4cf94349d04602270/kwai/api/likelihood)
+
+[商家信息](https://www.fastmock.site/mock/fdcb6edab58f19b4cf94349d04602270/kwai/api/:merchantId)
+
+[商品信息](https://www.fastmock.site/mock/fdcb6edab58f19b4cf94349d04602270/kwai/api/:merchantId/:goosId)

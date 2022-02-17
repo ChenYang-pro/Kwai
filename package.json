@@ -68,5 +68,9 @@
     "hooks": {
       "commit-msg": "validate-commit-msg"
     }
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/ChenYang-pro/Kwai.git",
+  "author": "ChenYang-pro <chenyang_nn@163.com>",
+  "license": "MIT"
 }
