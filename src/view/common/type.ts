@@ -25,14 +25,16 @@ interface MerchantMessage {
   merchantScore: MerchantObj;
 }
 
-interface RecommendObj {
+interface RecommendCards {
+  page: number;
+  totalNumber: number;
   pic: string;
   recommendName: string;
   recommendPrice: number;
   recommendSale: number;
 }
 interface RecommendMessage {
-  cards: Array<RecommendObj>;
+  cards: Array<RecommendCards>;
 }
 
 interface basicResponse<T> {
@@ -45,4 +47,13 @@ type GoodsResponse = basicResponse<IntroMessage>;
 type MerchantResponse = basicResponse<MerchantMessage>;
 type RecommendResponse = basicResponse<RecommendMessage>;
 
-export type { IntroMessage, MerchantMessage, RecommendMessage, basicResponse, GoodsResponse, MerchantResponse, RecommendResponse };
+export type {
+  IntroMessage,
+  MerchantMessage,
+  RecommendMessage,
+  RecommendCards,
+  basicResponse,
+  GoodsResponse,
+  MerchantResponse,
+  RecommendResponse
+};
