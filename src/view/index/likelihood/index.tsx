@@ -40,7 +40,13 @@ function LikeLiHood() {
                 <div className="flex flex-wrap bg-white p-1">
                   <div className="flex-1 box-border overflow-hidden rounded w-2/4">
                     <div>
-                      <div className="h-96 bg-recommend bg-no-repeat bg-cover bg-center"></div>
+                      <div className="h-96">
+                        <img
+                          src="https://p1.eckwai.com/ufile/adsocial/1dc759e9-7c62-4ca8-9444-11891bdcbaa1.jpg"
+                          alt="1"
+                          className="h-full object-cover"
+                        />
+                      </div>
                       <div>
                         <div className="mt-1 text-xs mb-3">
                           <span>{element.recommendName}</span>

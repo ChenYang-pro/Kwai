@@ -3,13 +3,16 @@ import { RightOutlined } from '@ant-design/icons';
 type propsType = {
   goodsInfo: IntroMessage | undefined;
 };
+const style = {
+  height: '100vw'
+};
 
 function Introduction(props: propsType) {
   const { goodsInfo } = props;
   return (
     <div className=" flex flex-col justify-center w-full">
-      <div className="">
-        <img className="h-full w-full" src={goodsInfo?.pic[0]} alt=""></img>
+      <div className="w-screen h-screen" style={style}>
+        <img className="h-full w-full object-cover" src={goodsInfo?.pic[0]} alt=""></img>
       </div>
       <div className="w-full box-border p-4 bg-white">
         <div className="flex items-center text-myPink  font-semibold">
