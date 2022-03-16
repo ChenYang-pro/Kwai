@@ -12,7 +12,8 @@ module.exports = {
     },
     backgroundColor: {
       'myPink': '#fe3666',
-      'white': '#fff'
+      'white': '#fff',
+      'picFont': 'rgb(0,0,0)'
     },
     textColor: {
       'myPink': '#fe3666',

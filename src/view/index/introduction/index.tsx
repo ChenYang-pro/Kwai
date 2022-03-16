@@ -11,8 +11,9 @@ function Introduction(props: propsType) {
   const { goodsInfo } = props;
   return (
     <div className=" flex flex-col justify-center w-full">
-      <div className="w-screen h-screen" style={style}>
+      <div className="w-screen h-screen relative" style={style}>
         <img className="h-full w-full object-cover" src={goodsInfo?.pic[0]} alt=""></img>
+        <div className="bg-picFont bg-opacity-50 absolute bottom-5 right-5 w-9 h-5 text-white text-center leading-5 rounded-xl">1/1</div>
       </div>
       <div className="w-full box-border p-4 bg-white">
         <div className="flex items-center text-myPink  font-semibold">

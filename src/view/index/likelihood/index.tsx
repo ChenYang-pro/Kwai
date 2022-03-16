@@ -68,7 +68,9 @@ function LikeLiHood() {
             );
           })}
         </div>
-        <Pagination simple defaultCurrent={pageNum} pageSize={pageSize} total={totalNum} onChange={handleChange} />
+        <div className='flex justify-center'>
+          <Pagination simple defaultCurrent={pageNum} pageSize={pageSize} total={totalNum} onChange={handleChange} />
+        </div>
       </div>
     );
   }
