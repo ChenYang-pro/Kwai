@@ -1,5 +1,6 @@
 import { IntroMessage } from '../../common/type';
 import { RightOutlined } from '@ant-design/icons';
+import { Carousel } from 'antd';
 type propsType = {
   goodsInfo: IntroMessage | undefined;
 };
@@ -11,10 +12,20 @@ function Introduction(props: propsType) {
   const { goodsInfo } = props;
   return (
     <div className=" flex flex-col justify-center w-full">
-      <div className="w-screen h-screen relative" style={style}>
-        <img className="h-full w-full object-cover" src={goodsInfo?.pic[0]} alt=""></img>
-        <div className="bg-picFont bg-opacity-50 absolute bottom-5 right-5 w-9 h-5 text-white text-center leading-5 rounded-xl">1/1</div>
+      <div className="w-screen relative" style={style}>
+        <Carousel>
+          <div style={style}>
+            <img className="w-full object-cover" style={style} src={goodsInfo?.pic[0]} alt=""></img>
+          </div>
+          <div style={style}>
+            <img className="w-full object-cover" style={style} src={goodsInfo?.pic[0]} alt=""></img>
+          </div>
+          <div style={style}>
+            <img className="w-full object-cover" style={style} src={goodsInfo?.pic[0]} alt=""></img>
+          </div>
+        </Carousel>
       </div>
+
       <div className="w-full box-border p-4 bg-white">
         <div className="flex items-center text-myPink  font-semibold">
           <div className="text-xl">

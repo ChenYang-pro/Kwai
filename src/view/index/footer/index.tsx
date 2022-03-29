@@ -1,7 +1,15 @@
 import { Button } from 'antd';
 import { UserOutlined, HomeOutlined, CommentOutlined } from '@ant-design/icons';
+import GoodsModal from './goodsModal/index';
+import { useState } from 'react';
 
 function Footer() {
+  const [isModalVisible, setIsModalVisible] = useState<boolean | undefined>(false);
+
+  const handleBtnClick = () => {
+    setIsModalVisible(true);
+  };
+
   return (
     <div className="bg-white fixed w-full h-14 -bottom-0 flex justify-between ">
       <div className="flex-1 px-1 text-sm ">
@@ -28,6 +36,7 @@ function Footer() {
       </div>
       <div className="flex justify-around items-center w-40">
         <Button
+          onClick={handleBtnClick}
           className="flex justify-center items-center text-sm"
           type="primary"
           shape="round"
@@ -37,6 +46,8 @@ function Footer() {
           领券购买
         </Button>
       </div>
+
+      <GoodsModal isModalVisible={isModalVisible} />
     </div>
   );
 }
