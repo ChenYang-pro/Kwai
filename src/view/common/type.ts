@@ -29,6 +29,7 @@ interface RecommendCards {
   page: number;
   totalNumber: number;
   pic: string;
+  id: string;
   recommendName: string;
   recommendPrice: number;
   recommendSale: number;
