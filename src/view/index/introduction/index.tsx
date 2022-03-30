@@ -1,6 +1,7 @@
 import { IntroMessage } from '../../common/type';
 import { RightOutlined } from '@ant-design/icons';
 import { Carousel } from 'antd';
+import { useState } from 'react';
 type propsType = {
   goodsInfo: IntroMessage | undefined;
 };
@@ -10,10 +11,18 @@ const style = {
 
 function Introduction(props: propsType) {
   const { goodsInfo } = props;
+  const [idx, setIdx] = useState(1);
+  const handleChange = () => {
+    let curIdx = idx + 1;
+    if (curIdx > 3) {
+      curIdx %= 3;
+    }
+    setIdx(curIdx);
+  };
   return (
     <div className=" flex flex-col justify-center w-full">
       <div className="w-screen relative" style={style}>
-        <Carousel>
+        <Carousel dots={false} afterChange={handleChange}>
           <div style={style}>
             <img className="w-full object-cover" style={style} src={goodsInfo?.pic[0]} alt=""></img>
           </div>
@@ -24,6 +33,9 @@ function Introduction(props: propsType) {
             <img className="w-full object-cover" style={style} src={goodsInfo?.pic[0]} alt=""></img>
           </div>
         </Carousel>
+        <div className="bg-picFont bg-opacity-50 absolute bottom-5 right-5 w-9 h-5 text-white text-center leading-5 rounded-xl">
+          {idx}/3
+        </div>
       </div>
 
       <div className="w-full box-border p-4 bg-white">

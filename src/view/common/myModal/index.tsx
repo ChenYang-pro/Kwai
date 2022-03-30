@@ -29,7 +29,7 @@ function MyModal(props: ModalPropsType) {
       style={{
         width: '100vw',
         maxWidth: '100vw',
-        height: '65vh',
+        height: '68vh',
         margin: '0px',
         padding: '0px',
         position: 'relative',

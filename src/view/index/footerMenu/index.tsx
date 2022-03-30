@@ -101,6 +101,7 @@ function GoodsDetailTitle() {
 }
 
 function GoodsDetail() {
+  const [goodsNum, setGoodsNum] = useState(1);
   return (
     <div className="flex flex-col justify-center">
       <div>
@@ -138,10 +139,29 @@ function GoodsDetail() {
         </div>
       </div>
       <div>
-        <div className="mb-2 font-bold text-base mt-2">数量</div>
+        <div className="mb-2 font-bold text-base mt-2 flex justify-between">
+          <span>数量</span>
+          <div>
+            <span
+              onClick={() => {
+                if (goodsNum > 1) {
+                  setGoodsNum(goodsNum - 1);
+                }
+              }}>
+              - &nbsp;{' '}
+            </span>
+            <span>{goodsNum}</span>
+            <span
+              onClick={() => {
+                setGoodsNum(goodsNum + 1);
+              }}>
+              &nbsp; +
+            </span>
+          </div>
+        </div>
       </div>
       <Button
-        className="w-full flex justify-center items-center text-sm"
+        className="w-full flex justify-center items-center text-sm mt-2"
         type="primary"
         shape="round"
         size="large"
