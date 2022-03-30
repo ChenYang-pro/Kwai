@@ -26,13 +26,13 @@ function MyModal(props: ModalPropsType) {
       visible={isVisible}
       footer={footerBtn}
       onCancel={handleCancle}
+      width="100vw"
       style={{
-        width: '100vw',
         maxWidth: '100vw',
         height: '68vh',
         margin: '0px',
         padding: '0px',
-        position: 'relative',
+        position: 'fixed',
         top: '50vh',
         bottom: '0',
         overflow: 'auto',
@@ -40,6 +40,7 @@ function MyModal(props: ModalPropsType) {
       }}
       transitionName=""
       bodyStyle={{
+        width: '100vw',
         padding: '24px'
       }}>
       <BodyContent />

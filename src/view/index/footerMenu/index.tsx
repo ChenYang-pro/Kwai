@@ -74,7 +74,7 @@ function GoodsDetailTitle() {
       </div>
       <div className="flex-1 flex-col ml-2 w-full">
         <div className="flex-row w-full">
-          <div className="text-lg leading-5 inline-block text-myPink.">
+          <div className="text-lg leading-5 inline-block text-myPink">
             <span>￥</span>
             <span>228</span>
           </div>
@@ -107,16 +107,16 @@ function GoodsDetail() {
       <div>
         <div className="mb-2 font-bold text-base">颜色</div>
         <div className="grid gap-4 grid-cols-3 p-1">
-          <div className="bg-myGrey inline-block">
+          <div className="bg-myGrey inline-block rounded-md">
             <span>测试商品：红色</span>
           </div>
-          <div className="bg-myGrey inline-block">
+          <div className="bg-myGrey inline-block rounded-md">
             <span>测试商品：紫色</span>
           </div>
-          <div className="bg-myGrey inline-block">
+          <div className="bg-myGrey inline-block rounded-md">
             <span>测试商品：绿色</span>
           </div>
-          <div className="bg-myGrey inline-block">
+          <div className="bg-myGrey inline-block rounded-md">
             <span>测试商品：白色</span>
           </div>
         </div>
@@ -124,16 +124,16 @@ function GoodsDetail() {
       <div>
         <div className="mb-2 font-bold text-base mt-2">尺码</div>
         <div className="grid gap-4 grid-cols-3 p-1">
-          <div className="bg-myGrey inline-block">
+          <div className="bg-myGrey inline-block rounded-md">
             <span>测试商品：SM</span>
           </div>
-          <div className="bg-myGrey inline-block">
+          <div className="bg-myGrey inline-block rounded-md">
             <span>测试商品：XS</span>
           </div>
-          <div className="bg-myGrey inline-block">
+          <div className="bg-myGrey inline-block rounded-md">
             <span>测试商品：L</span>
           </div>
-          <div className="bg-myGrey inline-block">
+          <div className="bg-myGrey inline-block rounded-md">
             <span>测试商品：XL</span>
           </div>
         </div>

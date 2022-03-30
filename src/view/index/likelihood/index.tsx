@@ -4,10 +4,10 @@ import { fetchRecommend } from '../../common/queries';
 import { useQuery } from 'react-query';
 
 function LikeLiHood() {
+  const pageSize: number = 2;
   const [recommendData, setRecommendData] = useState<RecommendMessage>();
   const [cards, setCards] = useState<RecommendCards[] | undefined>();
   const [pageNum, setPageNum] = useState<number>(1);
-  const [pageSize] = useState(2);
   const [totalNum, setTotalNum] = useState(1);
   const { isLoading } = useQuery('recommendInfo', async () => {
     const data = await fetchRecommend();
@@ -26,22 +26,22 @@ function LikeLiHood() {
 
   // 监听滚动
   useEffect(() => {
-    window?.addEventListener('scroll', debounce(addList));
-    return () => window?.removeEventListener('scroll', debounce(addList));
+    window?.addEventListener('scroll', addList);
+    return () => window?.removeEventListener('scroll', addList);
   });
 
   // 防抖
-  function debounce(fn: Function, time = 800) {
-    let timer: NodeJS.Timeout;
-    return function () {
-      if (timer) {
-        clearTimeout(timer);
-      }
-      timer = setTimeout(() => {
-        addList();
-      }, time);
-    };
-  }
+  // function debounce(fn: Function, time = 800) {
+  //   let timer: NodeJS.Timeout;
+  //   return function () {
+  //     if (timer) {
+  //       clearTimeout(timer);
+  //     }
+  //     timer = setTimeout(() => {
+  //       fn();
+  //     }, time);
+  //   };
+  // }
 
   function addList() {
     // scrollTop是滚动条滚动时，距离顶部的距离
