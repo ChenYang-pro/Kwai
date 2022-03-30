@@ -9,7 +9,7 @@ function LikeLiHood() {
   const [pageNum, setPageNum] = useState<number>(1);
   const [pageSize] = useState(2);
   const [totalNum, setTotalNum] = useState(1);
-  const { isLoading: RecommendIsLoading } = useQuery('recommendInfo', async () => {
+  const { isLoading } = useQuery('recommendInfo', async () => {
     const data = await fetchRecommend();
     setRecommendData(data.data);
     setTotalNum(data.data?.cards.length);
@@ -18,19 +18,20 @@ function LikeLiHood() {
 
   useEffect(() => {
     const Idx = pageNum * pageSize;
-    if (Idx < totalNum) {
+    if (Idx < totalNum && !isLoading) {
       const pageCards = recommendData?.cards.slice(0, Idx);
       setCards(pageCards);
     }
-  }, [pageNum, pageSize, recommendData?.cards, totalNum]);
+  }, [isLoading, pageNum, pageSize, recommendData?.cards, totalNum]);
 
   // 监听滚动
   useEffect(() => {
     window?.addEventListener('scroll', debounce(addList));
+    return () => window?.removeEventListener('scroll', debounce(addList));
   });
 
   // 防抖
-  function debounce(fn: Function, time = 2000) {
+  function debounce(fn: Function, time = 800) {
     let timer: NodeJS.Timeout;
     return function () {
       if (timer) {
@@ -38,7 +39,6 @@ function LikeLiHood() {
       }
       timer = setTimeout(() => {
         addList();
-        console.log(`防抖触发了 ${pageNum}, ${cards}`);
       }, time);
     };
   }

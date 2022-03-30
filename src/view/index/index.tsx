@@ -1,8 +1,8 @@
 import Introduction from './introduction';
-import Commodity from './commodity';
+import Goods from './goods';
 import Merchant from './merchant';
 import LikeLiHood from './likelihood';
-import Footer from './footer';
+import FooterMenu from './footerMenu';
 import { useQuery } from 'react-query';
 import { useState } from 'react';
 import { IntroMessage, MerchantMessage } from '../common/type';
@@ -28,9 +28,9 @@ function Index() {
     <div className="flex flex-col justify-center items-center ">
       <Introduction goodsInfo={goodsData} />
       <Merchant merchantInfo={merchantData} />
-      <Commodity goodsInfo={goodsData} />
+      <Goods goodsInfo={goodsData} />
       <LikeLiHood />
-      <Footer />
+      <FooterMenu />
     </div>
   );
 }

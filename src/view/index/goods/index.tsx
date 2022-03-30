@@ -4,7 +4,7 @@ type propsType = {
   goodsInfo: IntroMessage | undefined;
 };
 
-function Commodity(props: propsType) {
+function Goods(props: propsType) {
   const { goodsInfo } = props;
   return (
     <div className="bg-white w-full box-border flex flex-col">
@@ -17,4 +17,4 @@ function Commodity(props: propsType) {
   );
 }
 
-export default Commodity;
+export default Goods;

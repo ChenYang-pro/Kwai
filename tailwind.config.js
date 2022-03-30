@@ -13,11 +13,13 @@ module.exports = {
     backgroundColor: {
       'myPink': '#fe3666',
       'white': '#fff',
-      'picFont': 'rgb(0,0,0)'
+      'picFont': 'rgb(0,0,0)',
+      'myGrey': 'rgb(243, 244, 246)'
     },
     textColor: {
       'myPink': '#fe3666',
-      'white': '#fff'
+      'white': '#fff',
+      'myGray': 'rgb(107, 114, 128)'
     },
     extend: {
       backgroundImage: {
