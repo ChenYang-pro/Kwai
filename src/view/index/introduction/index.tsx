@@ -10,31 +10,30 @@ const style = {
 };
 
 function Introduction(props: propsType) {
+  const pic = [
+    'https://p2.eckwai.com/ufile/adsocial/1dc759e9-7c62-4ca8-9444-11891bdcbaa1.jpg',
+    'https://p2.eckwai.com/ufile/adsocial/1dc759e9-7c62-4ca8-9444-11891bdcbaa1.jpg',
+    'https://p2.eckwai.com/ufile/adsocial/1dc759e9-7c62-4ca8-9444-11891bdcbaa1.jpg'
+  ];
   const { goodsInfo } = props;
   const [idx, setIdx] = useState(1);
-  const handleChange = () => {
-    let curIdx = idx + 1;
-    if (curIdx > 3) {
-      curIdx %= 3;
-    }
-    setIdx(curIdx);
+  const handleChange = (e: number) => {
+    setIdx(e + 1);
   };
   return (
     <div className=" flex flex-col justify-center w-full">
       <div className="w-screen relative" style={style}>
         <Carousel dots={false} afterChange={handleChange}>
-          <div style={style}>
-            <img className="w-full object-cover" style={style} src={goodsInfo?.pic[0]} alt=""></img>
-          </div>
-          <div style={style}>
-            <img className="w-full object-cover" style={style} src={goodsInfo?.pic[0]} alt=""></img>
-          </div>
-          <div style={style}>
-            <img className="w-full object-cover" style={style} src={goodsInfo?.pic[0]} alt=""></img>
-          </div>
+          {pic.map((ele: string, idx: number) => {
+            return (
+              <div key={idx} style={style} className="relative">
+                <img className="w-full object-cover" style={style} src={ele} alt=""></img>
+              </div>
+            );
+          })}
         </Carousel>
-        <div className="bg-picFont bg-opacity-50 absolute bottom-5 right-5 w-9 h-5 text-white text-center leading-5 rounded-xl">
-          {idx}/3
+        <div className="bg-picFont bg-opacity-50 inline-block absolute bottom-5 right-5 w-9 h-5 text-white text-center leading-5 rounded-xl">
+          {idx}/{pic.length}
         </div>
       </div>
 

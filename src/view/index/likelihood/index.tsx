@@ -59,7 +59,14 @@ function LikeLiHood() {
 
   return (
     <div className="w-full mb-16">
-      <div className="bg-likelihood bg-no-repeat bg-16 bg-center flex h-8 justify-center items-center"></div>
+      <div className="flex justify-center">
+        <img
+          className="h-8"
+          src="https://ali-ec.static.yximgs.com/udata/pkg/eshop/kwaishop-shop-hybrid/i/a5a09fcf1c8e447dfbc8e5cf83a8649a.png"
+          alt="likelihood"
+        />
+      </div>
+
       <div className="grid grid-cols-2" id="list">
         {cards?.map((element) => {
           return (
